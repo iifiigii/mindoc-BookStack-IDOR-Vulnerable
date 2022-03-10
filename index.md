@@ -12,7 +12,7 @@ In **Prepare()**, if applications do not get session information, they try to us
 
 ![](http://www.cinderxxx.xyz/mindoc-BookStack-IDOR-Vulnerable/22.png)
 
-**GetSecureCookie()** is implemented by beego. In this function, it check if cookie has ***key*** field firstly. Then, it split this field to ***vs***, ***timestamp*** and ***sig*** by '|'. It use sha256/sha1 algorithm and secret key ***Secret*** to encrypt the combination of ***vs*** and ***timestamp***. In the end, if ciphertext == ***sig***, it return the ***vs*** after decode by base64.
+**GetSecureCookie()** is implemented by beego. In this function, it check if cookie has ***key*** field firstly. Then, it split this field to ***vs***, ***timestamp*** and ***sig***. It use sha256/sha1 algorithm and secret key ***Secret*** to encrypt the combination of ***vs*** and ***timestamp***. In the end, if ciphertext == ***sig***, it return the ***vs*** after decode by base64.
 
 ![](http://www.cinderxxx.xyz/mindoc-BookStack-IDOR-Vulnerable/3.png)
 
@@ -103,7 +103,7 @@ func main() {
 	fmt.Println("sha256，sig:", a)
  }
 ```
-After get the fake ***sig*** and ***vs***, we can connect them by '|' (need not to condsider *timestamp*). We replace the original cookie and access the account of the administrator.
+After get the fake ***sig*** and ***vs***, we can connect them by '\|' (need not to condsider *timestamp*). We replace the original cookie and access the account of the administrator.
 
 ![](http://www.cinderxxx.xyz/mindoc-BookStack-IDOR-Vulnerable/8.png)
 
