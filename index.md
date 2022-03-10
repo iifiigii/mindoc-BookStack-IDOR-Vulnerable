@@ -6,7 +6,7 @@ MinDoc and BookStack are document management system. They both develop their web
 
 All function are implemented by different **Controller**. **BaseController** (like Parent class) run the **Prepare()** at every beginning.
 
-![](https://github.com/iifiigii/mindoc-BookStack-IDOR-Vulnerable/blob/gh-pages/1.png)
+![](http://www.cinderxxx.xyz/mindoc-BookStack-IDOR-Vulnerable/1.png)
 
 In **Prepare()**, if applications do not get session information, they try to use cookie to access account.
 
